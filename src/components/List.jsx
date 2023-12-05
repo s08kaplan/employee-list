@@ -1,5 +1,7 @@
 import { useState } from "react";
 import data from "../helper/data";
+import "../components/css/list.css"
+
 const List = () => {
   const [show, setShow] = useState(data);
   const [number, setNumber] = useState(0);
@@ -9,17 +11,17 @@ console.log(show.length);
 setNumber(number + 5)
    }
    else {
-   setNumber(0) 
+   setNumber(show.length-5) 
    }
 };
 console.log(number);
 
 
   const handlePreviousShow = () => {
-   if(number >= 0){
+   if(number >= 5){
 setNumber(number - 5)
    }else {
-    setNumber(show.length - 5)
+    setNumber(0)
    }
 };
 console.log(number); 
@@ -27,11 +29,11 @@ console.log(number);
 //   const { id, image, name, age, email } = show;
 
   return (
-    <>
+    <div className="main-list">
     {show.slice(number,number + 5).map(({ id, image, name, age, email }) =>
       (<article className="person" key={id}>
         <img src={image} alt={"name"} />
-        <div>
+        <div className="name-email">
           <h4>{name}</h4>
           <p>{email}</p>
           <p>{age} years</p>
@@ -44,7 +46,7 @@ console.log(number);
         <button onClick={()=> handlePreviousShow()}>Prev</button>
         <button onClick={() => handleNextShow()}>Next</button>
       </div>
-    </>
+    </div>
   );
 };
 

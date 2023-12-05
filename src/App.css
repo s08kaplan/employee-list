@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Borel&family=Dancing+Script:wght@500&family=Edu+SA+Beginner&family=Outfit&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: bisque;
+    font-family: 'Dancing Script', cursive; 
+}
+main {
+padding: 1rem;
+
+
+  &  section.container {
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+
+   & div.title {
+        margin-bottom: 2rem;
+    }
+}
+}
+
